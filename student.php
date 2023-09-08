@@ -130,7 +130,7 @@ if(count($row)>0)
 {
 echo "<table>
 <tr>
-	<td>".$row['name']." YOUR VENUE IS ".$row['venue']." AND YOUR SEAT NUMBER IS ".$row['seat_no']."</td>
+	<td>".$row['name']." YOUR VENUE IS ".$row['venue']." AND YOUR SEAT NUMBER IS ".$row['id']."</td>
 </tr>";
 }else{
 	echo "No Record Found";

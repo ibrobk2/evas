@@ -11,13 +11,15 @@ try {
   // Reset the system for another exam
   
   // 1. Delete all existing student records
-  $conn->exec("DELETE FROM students");
+  $conn->exec("DELETE FROM students"); 
+  $conn->exec("DELETE FROM course");
   
   // 2. Delete all existing exam hall records
   $conn->exec("DELETE FROM exam_halls");
   
   // 3. Reset the auto-increment value for student_id column
   $conn->exec("ALTER TABLE students AUTO_INCREMENT = 1");
+  $conn->exec("ALTER TABLE course AUTO_INCREMENT = 1");
   
   // 4. Reset the auto-increment value for hall_id column
   $conn->exec("ALTER TABLE exam_halls AUTO_INCREMENT = 1");

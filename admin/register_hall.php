@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $stmt = $conn->prepare("INSERT INTO exam_halls (name, seating_capacity) VALUES (:hall_name, :seating_capacity)");
   $stmt->bindParam(":hall_name", $hallName);
   $stmt->bindParam(":seating_capacity", $seatingCapacity);
-  $stmt->execute();
+  if($stmt->execute()){
   
   // Redirect back to index.php after successful registration
   // header("Location: index.php");
@@ -50,16 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <script>
   Swal.fire(
     'Good job!',
-    'Hall Registered Successful!',
+    '<?= $hallName; ?> Hall Registered Successful!',
     'success'
-  );
-  window.location = "index.php";
-
-
+  ).then((result)=>{if(true){window.location = "index.php"}});
   
   </script>
   <?php
-  // header("Location: index.php");
+  }
   exit();
 } else {
   die("Error: Invalid request.");

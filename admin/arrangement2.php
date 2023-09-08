@@ -112,9 +112,9 @@ include "connection.php";
 <body>
   <a href="../admin">Back to Dashboard</a>
     <div class="header">
-        <img src="../images/hukpoly_logo.webp" alt="">
+        <img src="../images/alqalam_logo.png" alt="">
         <h2>Department of Computer Science</h2>
-        <h3>Hassan Usman Katsina Polytechnic, Katsina</h3>
+        <h3>Al-Qalam University, Katsina</h3>
     </div>
 
     <div class="course_details">

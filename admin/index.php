@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     .btn-primary, #hall_btn{
       padding: 10px;
       border: none;
-      ouline: none;
+      outline: none;
       color: white;
       background-color: dodgerblue;
       border-radius: 6px;
@@ -117,6 +117,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         width: auto;
       }
     }
+
+    #course_btn{
+      padding: 7px;
+      border: none;
+      outline: none;
+      background-color: dodgerblue;
+      color: white;
+      border-radius: 5px;
+    }
+
+    button:hover{
+      cursor:pointer;
+      opacity: 0.8;
+    }
   </style>
    <script>
     function confirmReset() {
@@ -128,7 +142,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="container">
     <h1>Exam Venue Allocation and Seat Arrangements System</h1>
     
-   
+    <div class="form-container">
+    <p style="color:red;"><b>NB: Please Reset Only When Exam is Done.</b></p>
+
+      <h2>Reset System</h2>
+      <!-- Add form elements and JavaScript logic to reset the system -->
+      <?php if ($resetStatus): ?>
+    <p>The system has been reset successfully.</p>
+  <?php endif; ?>
+  
+  <form method="post" onsubmit="return confirmReset()" action="reset.php">
+    <button type="submit" style="padding: 10px; background-color: red;color: azure; border:none; border-radius: 5px; cursor:pointer;">Reset System</button>
+  </form>
+    </div>
     
     <div class="form-container">
       <p style="color:red;"><b>NB: Please finish registering ALL venues before uploading student data.</b></p>
@@ -152,7 +178,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     </div>
 
-    <!-- <div class="form-container">
+    <div class="form-container">
       <h2>Course Details:</h2>
     <form method="post" action="course.php">
     <label for="course code">Course Code:</label>
@@ -166,9 +192,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="date" name="datetime" id="date" required style="width:220px;">
     <br>
     <br>
-    <button type="submit" id="course_btn">Add Details</button>
+    <button type="submit" id="course_btn" name="course_btn">Add Details</button>
   </form>
-    </div> -->
+    </div>
 
 
     <!-- Upload data section -->
@@ -244,17 +270,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </table>
     </div>
     
-    <div class="form-container">
-      <h2>Reset System</h2>
-      <!-- Add form elements and JavaScript logic to reset the system -->
-      <?php if ($resetStatus): ?>
-    <p>The system has been reset successfully.</p>
-  <?php endif; ?>
-  
-  <form method="post" onsubmit="return confirmReset()" action="reset.php">
-    <button type="submit" style="padding: 10px; background-color: red;color: azure; border:none; border-radius: 5px; cursor:pointer;">Reset System</button>
-  </form>
-    </div>
+    
     
     <div class="form-container">
       <h2>Generate Reports</h2>

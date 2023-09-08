@@ -115,18 +115,30 @@ th, td{
 </head>
 <body>
     <div class="header">
-        <img src="../images/hukpoly_logo.webp" alt="">
+        <img src="../images/alqalam_logo.png" alt="">
         <h2>Department of Computer Science</h2>
-        <h3>Hassan Usman Katsina Polytechnic, Katsina</h3>
+        <h3>Alqalam University, Katsina</h3>
     </div>
+    <?php 
+$sql = "SELECT * FROM course";
+$result = $conn->query($sql);
 
+$rows = $result->fetchAll(PDO::FETCH_ASSOC);
+// $row = mysqli_fetch_assoc($result);
+
+foreach($rows as $row){
+
+
+?>
     <div class="course_details">
-        <h3>Course Code:........................................</h3>
-        <h3>Course Title:.................................................................................................</h3>
-        <h3>Date:........................................................................</h3>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Course Code: <?php echo $row['courseCode']; ?></u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+        <h3  style="position: relative; right:-250px;"><u>Course Title:<?php echo $row['courseTitle']; ?></u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+        <h3 style="position: relative; right:-350px;"><u>Date:<?php echo $row['dayTime']; ?></u></h3>
         
     </div>
-    <button id="print" style="text-align: right;" onclick="printer()">Print</button>
+
+    <?php } ?>
+    <button id="print" style="position: relative; left:20px" onclick="printer()">Print</button>
 <div class="table-container">
       <h2 style="text-align:center;"><u>Attendance Sheets</u></h2>
       <table>

@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<span class="icon-bar"></span>
 					  </button>
 						<div class="logo">
-							<a class="navbar-brand" href="index.html">Seating Arrangement <span>Department of Computer Science HUKPOLY Katsina</span></a>
+							<a class="navbar-brand" href="index.html">Seating Arrangement <span>Department of Computer Science Al-Qalam University Katsina</span></a>
 						</div>
 					</div>
 
@@ -46,7 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li class="hvr-sweep-to-bottom"><a href="sview.html" class="scroll">Student</a></li>
 						
 						
-						<li class="hvr-sweep-to-bottom"><a href="register.html" class="scroll">Sign Up</a></li>
+						<!-- <li class="hvr-sweep-to-bottom"><a href="register.html" class="scroll">Sign Up</a></li> -->
 					  </ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
